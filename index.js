@@ -1,10 +1,12 @@
 const express = require('express');
 const _ = require('lodash');
 const Joi = require('joi');
+const morgan = require('morgan');
 const port = global.process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json())
+app.use(morgan('dev'));
 var students = [
     {id: 1, name : 'Student 1', age : 26},
     {id: 2, name : 'Student 2', age : 28},
